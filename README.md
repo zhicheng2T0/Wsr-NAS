@@ -3,14 +3,24 @@
 This is the official github repository for "Neural Architecture Search for Wide Spectrum Adversarial Robustness"
 
 # Introduction
-![alt text](https://github.com/zhicheng2T0/Wsr-NAS/blob/master/demo.PNG)
+![alt text](https://github.com/zhicheng2T0/Wsr-NAS/blob/master/demo2.PNG)
 One major limitation of CNNs is that they are vulnerable to adversarial attacks. Currently, adversarial robustness in neural networks is commonly optimized with respect to a small pre-selected adversarial noise strength, causing them to have potentially limited performance when under attack by larger adversarial noises in real-world scenarios. In this research, we aim to find Neural Architectures that have improved robustness on a wide range of adversarial noise strengths through Neural Architecture Search. In detail, we propose a lightweight Adversarial Noise Estimator to reduce the high cost of generating adversarial noise with respect to different strengths. Besides, we construct an Efficient Wide Spectrum Searcher to reduce the cost of adjusting network architecture with the large adversarial validation set during the search. With the two components proposed, the number of adversarial noise strengths searched can be increased significantly while having a limited increase in search time. Extensive experiments on benchmark datasets such as CIFAR and ImageNet demonstrate that with a significantly richer search signal in robustness, our method can find architectures with improved overall robustness while having a limited impact on natural accuracy and around 40% reduction in search time compared with the naive approach of searching.
 
 # Method
 In this research, we aim to address the limitations in the existing research by finding Neural Architectures with wide spectrum adversarial robustness (WsrNets). When trained with the commonly used adversarial training techniques (i.e. TRADES or PGD), on a single model without having a significant increase in model parameters, the WsrNets found have improved average robust accuracy (average model accuracy on adversarial examples with different adversarial noise strengths) on a wide range of adversarial noise strengths while maintaining high clean accuracy (accuracy on clean data without adversarial noises). To find such WsrNets, we propose a search algorithm named Neural Architecture Search for Wide Spectrum Adversarial Robustness(Wsr-NAS) leveraging the One-Shot-NAS framework. 
 
 To prevent a significant increase in computational costs when simultaneously generating adversarial noise at different strengths during the search, we propose a lightweight Adversarial Noise Estimator (AN-Estimator). The AN-Estimator can be trained to generate adversarial noises for each input based on a few existing adversarial noises corresponding to the input, allowing adversarial noises at different adversarial noise strengths to be generated at a much lower cost. The architecture of the AN-Estimator is demonstrated below.
+![alt text](https://github.com/zhicheng2T0/Wsr-NAS/blob/master/ane.PNG)
 
+On the other hand, in the One-Shot-NAS framework, adjusting network architecture during search requires calculating gradient w.r.t. to the architecture weights on the validation set. To reduce the cost of performing such an operation on multiple adversarial validation sets, we propose an Efficient Wide Spectrum Searcher (EWSS). To adjust the network architecture during the search, only a backward pass over the lightweight EWSS is required, significantly reducing the computational cost.
+![alt text](https://github.com/zhicheng2T0/Wsr-NAS/blob/master/ewss.PNG)
+
+# Key results
+In table below, key results on performance comparisons between different WsrNets and different existing baselines are demonstrated.
+![alt text](https://github.com/zhicheng2T0/Wsr-NAS/blob/master/key_results.PNG)
+
+# Acknowledgement
+This work was supported in part by the Australian Research Council under Project DP210101859 and the University of Sydney Research Accelerator (SOAR) Prize. The authors acknowledge the use of the National Computational Infrastructure (NCI) which is supported by the Australian Government, and accessed through the NCI Adapter Scheme and Sydney Informatics Hub HPC Allocation Scheme.
 
 # To search and retrain
 
