@@ -1,0 +1,2 @@
+#!/bin/bash
+./script/command_mgpu_block.sh t_cna_r 8 1 "python3 -u train_adv_mgpu_cifar.py --init_channels=45 --layers=20 --save=EXP_cna_r --arch=cna_r --num_steps=7 --batch_size=400 --weight_decay=0.0005"

@@ -1,0 +1,2 @@
+#!/bin/bash
+./script/command_mgpu_block.sh t_advr_IN 4 1 "python3 -u train_adv_mgpu_imgnet.py --init_channels=60 --layers=20 --save=EXP_ADVR_IN --arch=ADVRUSH --batch_size=256 --epsilon=0.0156 --num_steps=4"

@@ -1,0 +1,2 @@
+#!/bin/bash
+./script/command_mgpu_block.sh t_racl_IN 4 1 "python3 -u train_adv_mgpu_imgnet.py --init_channels=64 --layers=20 --save=EXP_RACL_IN --arch=RACL --batch_size=256 --epsilon=0.0156 --num_steps=4"

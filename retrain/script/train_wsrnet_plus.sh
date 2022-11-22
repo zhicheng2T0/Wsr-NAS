@@ -1,0 +1,2 @@
+#!/bin/bash
+./script/command_mgpu_block.sh wsrplus 8 1 "python3 -u train_adv_mgpu_cifar.py --break_value=-1 --init_channels=46 --layers=20 --save=EXP_wsrnet_plus --arch=WsrNet_Plus --num_steps=7 --batch_size=400 --weight_decay=0.0005"
