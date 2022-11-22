@@ -15,7 +15,7 @@ To prevent a significant increase in computational costs when simultaneously gen
 On the other hand, in the One-Shot-NAS framework, adjusting network architecture during search requires calculating gradient w.r.t. to the architecture weights on the validation set. To reduce the cost of performing such an operation on multiple adversarial validation sets, we propose an Efficient Wide Spectrum Searcher (EWSS). To adjust the network architecture during the search, only a backward pass over the lightweight EWSS is required, significantly reducing the computational cost. The architecture of EWSS is demonstrated below.
 ![alt text](https://github.com/zhicheng2T0/Wsr-NAS/blob/master/ewss.PNG)
 
-By integrating the EWSS and AN-Estimator into the One-Shot-NAS framework, we obtain the Wsr-NAS algorithm. With the Wsr-NAS algorithm, various WsrNets with improved overall robustness has been discovered.
+By integrating the EWSS and AN-Estimator into the One-Shot-NAS framework, we obtain the Wsr-NAS algorithm, allowing various WsrNets with improved overall robustness to be discovered.
 
 # Key results
 In table below, key results on performance comparisons between different WsrNets and different existing baselines are demonstrated.
