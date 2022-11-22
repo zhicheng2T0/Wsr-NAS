@@ -21,15 +21,23 @@ By integrating the EWSS and AN-Estimator into the One-Shot-NAS framework, we obt
 In table below, key results on performance comparisons between different WsrNets and different existing baselines are demonstrated.
 ![alt text](https://github.com/zhicheng2T0/Wsr-NAS/blob/master/key_results.PNG)
 
-# Acknowledgement
-This work was supported in part by the Australian Research Council under Project DP210101859 and the University of Sydney Research Accelerator (SOAR) Prize. The authors acknowledge the use of the National Computational Infrastructure (NCI) which is supported by the Australian Government, and accessed through the NCI Adapter Scheme and Sydney Informatics Hub HPC Allocation Scheme.
+# Citation
+If you find our work to be useful for your research, please consider citing:
+
+     @article{WsrNAS, 
+            title={Neural Architecture Search for Wide Spectrum Adversarial Robustness}, 
+            author={Cheng, Zhi and Li, Yanxi and Dong, Minjing and Su, Xiu and You, Shan and Xu, Chang}, 
+            year={2023},  
+            journal={Proceedings of the AAAI Conference on Artificial Intelligence}, 
+            month={February}
+     }
 
 # To search and retrain
 
-To search for WsrNets on CIFAR-10 using the Wsr-NAS algorithm, please refer to ./search/script/search_pgd.sh. The architecture for AN-Estimator used when searching for WsrNet-Plus is included in ./search/robust_train_search_official.py, the name of this AN-Estimator is AN_estimator_plus.
+    To search for WsrNets on CIFAR-10 using the Wsr-NAS algorithm, please refer to ./search/script/search_pgd.sh. The architecture for AN-Estimator used when searching for WsrNet-Plus is included in ./search/robust_train_search_official.py, the name of this AN-Estimator is AN_estimator_plus.
 
-To retrain WsrNet-Basic, WsrNet-Robust, WsrNet-M, WsrNet-M-1, WsrNet-N, WsrNet-Plus on CIFAR-10, please refer to "train_wsrnet_basic.sh", "train_wsrnet_robust.sh", "train_wsrnet_m.sh", "train_wsrnet_m_1.sh", "train_wsrnet_n.sh", "train_wsrnet_plus.sh" in ./retrain/script/.
+    To retrain WsrNet-Basic, WsrNet-Robust, WsrNet-M, WsrNet-M-1, WsrNet-N, WsrNet-Plus on CIFAR-10, please refer to "train_wsrnet_basic.sh", "train_wsrnet_robust.sh", "train_wsrnet_m.sh", "train_wsrnet_m_1.sh", "train_wsrnet_n.sh", "train_wsrnet_plus.sh" in ./retrain/script/.
 
-To retrain WsrNet-Basic, RACL, AdvRush on ImageNet using Fast-AT, please refer to "train_ImgNet_WsrNet_basic.sh", "train_ImgNet_RACL.sh" and "train_ImgNet_AdvRush.sh" ./retrain/script/.
+    To retrain WsrNet-Basic, RACL, AdvRush on ImageNet using Fast-AT, please refer to "train_ImgNet_WsrNet_basic.sh", "train_ImgNet_RACL.sh" and "train_ImgNet_AdvRush.sh" ./retrain/script/.
 
-Codes for testing different versions of AN-Estimator is provided in ./test_AN_estimator.
+    Codes for testing different versions of AN-Estimator is provided in ./test_AN_estimator.
